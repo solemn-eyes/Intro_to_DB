@@ -1,3 +1,13 @@
-USE alx_book_store;
-
-SELECT * FROM alx_book_store.books;
+SELECT
+    COLUMN_NAME AS "Field",
+    COLUMN_TYPE AS "Type",
+    COLUMN_KEY AS "Null",
+    COLUMN_DEFAULT AS "Default",
+    IS_NULLABLE AS "Null",
+    EXTRA AS "Extra"
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    TABLE_SCHEMA = DATABASE()
+    AND TABLE_NAME = 'books';
+    
