@@ -4,6 +4,11 @@ from pymysql import MySQLError
 
 try:
     # Connecting to MySQL server
+    mysqlConnector = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='password'
+    )
     connection = pymysql.connect(
         host='localhost',
         user='root',
